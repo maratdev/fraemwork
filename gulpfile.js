@@ -1,20 +1,20 @@
 var gulp           = require('gulp'),
-		gutil          = require('gulp-util' ),
-		sass           = require('gulp-sass'),
-		browserSync    = require('browser-sync'),
-		concat         = require('gulp-concat'),
-		uglify         = require('gulp-uglify'),
-		cleanCSS       = require('gulp-clean-css'),
-		rename         = require('gulp-rename'),
-		del            = require('del'),
-		imagemin       = require('gulp-imagemin'),
-		pngquant       = require('imagemin-pngquant'),
-		cache          = require('gulp-cache'),
-		autoprefixer   = require('gulp-autoprefixer'),
-		fileinclude    = require('gulp-file-include'),
-		gulpRemoveHtml = require('gulp-remove-html'),
-		bourbon        = require('node-bourbon'),
-		ftp            = require('vinyl-ftp');
+		gutil          = require('gulp-util' ), //Логирование, подсветка вывод в консоль
+		sass           = require('gulp-sass'), //Подключаем Sass пакет
+		browserSync    = require('browser-sync'), // Автообновление страницы во всех браузерах на всех устройствах при их изменение
+		concat         = require('gulp-concat'), // Для конкатенации файлов (объединяет несколько файлов в один файл)
+		uglify         = require('gulp-uglify'), // Для сжатия JS
+		cleanCSS       = require('gulp-clean-css'), //Минимизация CSS
+		rename         = require('gulp-rename'), //Библиотека для переименования файлов
+		del            = require('del'), //Библиотека для удаления файлов и папок
+		imagemin       = require('gulp-imagemin'), //Библиотека для работы с изображениями (сжатие изобр.)
+		pngquant       = require('imagemin-pngquant'), //Библиотеку для работы с png (сжатие изобр.)
+		cache          = require('gulp-cache'), //Библиотека для кеширования
+		autoprefixer   = require('gulp-autoprefixer'), // Автоматически расставляет префиксы к CSS свойствам
+		fileinclude    = require('gulp-file-include'), //Для вставки файла или кода в html
+		gulpRemoveHtml = require('gulp-remove-html'), //Удалить HTML- код , когда файлы идут в сборку .
+		bourbon        = require('node-bourbon'), //Библиотека mixin-ов для SASS
+		ftp            = require('vinyl-ftp'); //Автодеплой
 
 gulp.task('browser-sync', function() {
 	browserSync({
@@ -26,7 +26,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('sass', ['headersass'], function() {
-	return gulp.src('app/sass/**/*.sass')
+	return gulp.src('app/sass/**/*.sсss')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
 		}).on('error', sass.logError))
@@ -38,7 +38,7 @@ gulp.task('sass', ['headersass'], function() {
 });
 
 gulp.task('headersass', function() {
-	return gulp.src('app/header.sass')
+	return gulp.src('app/header.sсss')
 		.pipe(sass({
 			includePaths: bourbon.includePaths
 		}).on('error', sass.logError))
@@ -52,7 +52,8 @@ gulp.task('headersass', function() {
 gulp.task('libs', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
-		// 'app/libs/magnific-popup/magnific-popup.min.js'
+		'app/libs/jquery.nicescroll/jquery.nicescroll.min.js',
+		'app/libs/modernizr/modernizr.js'
 		])
 		.pipe(concat('libs.min.js'))
 		.pipe(uglify())
@@ -61,7 +62,7 @@ gulp.task('libs', function() {
 
 gulp.task('watch', ['sass', 'libs', 'browser-sync'], function() {
 	gulp.watch('app/header.sass', ['headersass']);
-	gulp.watch('app/sass/**/*.sass', ['sass']);
+	gulp.watch('app/sass/**/*.sсss', ['sass']);
 	gulp.watch('app/*.html', browserSync.reload);
 	gulp.watch('app/js/**/*.js', browserSync.reload);
 });

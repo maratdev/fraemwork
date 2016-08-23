@@ -1,51 +1,78 @@
-<h1>OptimizedHTML - Start HTML Template</h1>
+<h1>Fraemwork</h1>
 
-<p>
-	<img src="http://agragregra.github.io/github-images/optimized-html-github-poster.jpg" alt="Start HTML Template">
-</p>
+<h2>Что входит в сборку</h2>
 
-<p>Author: <a href="http://webdesign-master.ru" target="_blank">WebDesign Master</a> | <a href="http://webdesign-master.ru/blog/tools/2016-08-19-optimizedhtml.html" target="_blank">Manual in Russian</a></p>
-
-<p>OptimizedHTML is all-inclusive, optimized for Google PageSpeed start HTML5 template with Bootstrap (grid only), Gulp, Sass, Browsersync, Autoprefixer, Clean-CSS, Uglify, Imagemin, Vinyl-FTP, Bower (libs path) and Bourbon support. The template contains a <strong>.htaccess</strong> file with caching rules for web server.</p>
-
-<p>OptimizedHTML Start Template uses the best practices of web development and optimized for Google PageSpeed.</p>
-
-<p>Cross-browser compatibility: IE9+.</p>
-
-<p>The template uses a Sass with <strong>Sass</strong> syntax and project structure with source code in the directory <strong>app/</strong> and production folder <strong>dist/</strong>, that contains ready project with optimized HTML, CSS, JS and images.</p>
-
-<h2>How to use OptimizedHTML</h2>
-
+<h3>Gulp:</h3>
 <ol>
-	<li><a href="https://github.com/agragregra/optimizedhtml-start-template/archive/master.zip">Download</a> <strong>optimizedhtml-start-template</strong> from GitHub;</li>
-	<li>Install Node Modules: <strong>npm i</strong>;</li>
-	<li>Run the template: <strong>gulp</strong>.</li>
+<li><strong>gulp-sass</strong>: Sass пакет;</li>
+<li><strong>gulp-util</strong>: Логирование, подсветка вывод в консоль;</li>
+<li><strong>browser-sync</strong>: Автообновление страницы во всех браузерах на всех устройствах при их изменение;</li>
+<li><strong>gulp-concat</strong>: Для конкатенации файлов (объединяет несколько файлов в один файл);</li>
+<li><strong>gulp-clean-css</strong>: Минимизация CSS;</li>
+<li><strong>gulp-rename</strong>: Библиотека для переименования файлов;</li>
+<li><strong>del</strong>: Библиотека для удаления файлов и папок;</li>
+<li><strong>gulp-imagemin</strong>: Библиотека для работы с изображениями (сжатие изобр. .JPG / .JEPG);</li>
+<li><strong>imagemin-pngquant</strong>: Библиотека для работы с изображениями (сжатие изобр. .PNG);</li>
+<li><strong>gulp-cache</strong>: Библиотека для кеширования;</li>
+<li><strong>gulp-autoprefixer</strong>: Автоматически расставляет префиксы к CSS свойствам;</li>
+<li><strong>gulp-file-include</strong>: Для вставки файла или кода в html;</li>
+<li><strong>gulp-remove-html</strong>: Удаляет HTML-код, когда файлы идут в сборку (в данном случае header.min);</li>
+<li><strong>gulp-remove-html</strong>: Библиотека mixin-ов для SASS;</li>
+<li><strong>vinyl-ftp</strong>: Автодеплой;</li>
 </ol>
-
-<h2>Gulp tasks:</h2>
-
+<h3>Таски Gulp:</h3>
 <ul>
-	<li><strong>gulp</strong>: run default gulp task (sass, js, watch, browserSync) for web development;</li>
-	<li><strong>build</strong>: build project to <strong>dist</strong> folder (cleanup, image optimize, removing unnecessary files);</li>
-	<li><strong>deploy</strong>: project deployment on the server from <strong>dist</strong> folder via FTP;</li>
-	<li><strong>clearcache</strong>: clear all gulp cache.</li>
+	<li><strong>gulp</strong>: запуск дефолтного gulp таска (sass, js, watch, browserSync) для разработки;</li>
+	<li><strong>build</strong>: сборка проекта в папку dist (очистка, сжатие картинок, удаление всего лишнего);</li>
+	<li><strong>deploy</strong>: выгрузка проекта на рабочий сервер из папки dist по FTP;</li>
+	<li><strong>clearcache</strong>: очистка кеша gulp. Полезно для очистки кеш картинок и закешированных путей..</li>
 </ul>
 
-<h2>Rules for working with the starting HTML template</h2>
+<h3>HTML:</h3>
+```html
+//html code
+<meta name="format-detection" content="telephone=no"> //преобразование телефонных номеров в ссылки в мобильных браузерах
+<meta name="author" content="Name"> //автор, создатель сайта
+<meta name="copyright" content="&copy; Сайт корпорации МММ 2013-2016"> //автор, создатель сайта
+<meta name="robots" content="index, follow"> //Разрешать или запрещать роботам, приходящим на сайт, индексировать данную страницу
 
+//Социальные плагины Facebook и Open Graph
+<meta property="og:image" content="http://www.site.com/img/icon_325x325.png"> //URL-адрес изображения, который должен определить Ваш объект в графе для изображения.
+<meta property="og:site_name" content="Название сайта"> //Если ваш объект является частью большого web-сайта, название, должно отображаться на всех страницах сайта. Например, "IMDb".
+<meta property="og:title" content="Заголовок сайта "> //Название вашего объекта, как он должен отображаться в графе, например фильм, "The Rock".
+<meta property="og:description" content="Описание сайта" /> //Одно-два предложения описания вашего объекта.
+<meta property="og:url" content="http://www.site.ru/"> //Канонический URL-адрес объекта, который будет использоваться в качестве его постоянного ID в графе, например, "http://www.imdb.com/title/tt0117500/".
+<meta property="og:locale" content="ru_RU"> //Тег локации.
+
+//Меняем фон верхней панели браузера
+<meta name="theme-color" content="#000"> //Chrome, Firefox OS and Opera
+<meta name="msapplication-navbutton-color" content="#000"> //Windows Phone
+<meta name="apple-mobile-web-app-status-bar-style" content="#000"> //iOS Safari
+```
+<h3>CSS/SCSS:</h3>
 <ol>
-	<li>All HTML files should have similar initial content as in <strong>app/index.html</strong>;</li>
-	<li><strong>Template Basic Images Start</strong> comment in app/index.html - all your custom template basic images (og:image for social networking, favicons for a variety of devices);</li>
-	<li><strong>Load Fonts CSS Start</strong> comment in app/index.html: use <strong>loadCSS</strong> function, if the site is located in a subfolder. Use (uncomment) <strong>loadLocalStorageCSS</strong>, if the site is at the root. One of the lines should always be commented out. All fonts are connected in <strong>app/sass/fonts.sass</strong> with Bourbon;</li>
-	<li><strong>Custom Browsers Color Start</strong> comment in app/index.html: set the color of the browser head on a variety of devices;</li>
-	<li><strong>Custom HTML</strong> comment in app/index.html - all your custom HTML;</li>
-	<li><strong>Optimized loading JS Start</strong> comment in app/index.html: loading all scripts;</li>
-	<li>For installing new jQuery library, just run the command "<strong>bower i plugin-name</strong>" in the terminal. Libraries are automatically placed in the folder <strong>app/libs</strong>. Bower must be installed in the system (npm i -g bower). Then place all jQuery libraries paths in the <strong>'libs'</strong> task (gulpfile.js);</li>
-	<li>All custom JS located in <strong>app/js/common.js</strong>;</li>
-	<li>All Sass vars placed in <strong>app/sass/_vars.sass</strong>;</li>
-	<li>All Bootstrap media queries placed in <strong>app/sass/_media.sass</strong>;</li>
-	<li>All jQuery libraries CSS styles placed in <strong>app/sass/_libs.sass</strong>;</li>
-	<li>All basic styles (html, body, fonts, buttons, etc...) placed in <strong>app/sass/_base.sass</strong>;</li>
-	<li>In the file <strong>app/header.sass</strong> should be placed all styless, responsible for displaying the first screen (on the biggest screens) on all pages;</li>
-	<li>Rename <strong>ht.access</strong> to <strong>.htaccess</strong> before place it in your web server. This file contain rules for files caching on web server.</li>
+	<li>Все Sass переменные размещайте в <strong>app/sass/_vars.sass</strong>;</li>
+	<li>Все CSS медиазапросы размещайте в <strong>app/sass/_media.sass</strong>;</li>
+	<li>Все CSS стили jQuery библиотек размещайте в <strong>app/sass/_libs.sass</strong>;</li>
+	<li>Все базовые стили (html, body, fonts, buttons, etc...) размещайте в <strong>app/sass/_base.sass</strong>;</li>
+	<li>В файле <strong>app/header.sass</strong> должны размещаться стили, предназначенные для отображения верхней части сайта на первом экране (на самых больших мониторах). Здесь отображаются стили как главной, так и всех внутренних страниц;</li>
+</ol>
+<h3>JavaScript:</h3>
+<ol>
+	<li>SVG Fallback</li>
+	<li>Плавная прокрутка к объекту</li>
+	<li>E-mail Ajax форма</li>
+	<li>Chrome Smooth Scroll(плавная прокрутка для Chrome);</li>
+	<li>Плавный скролл</li>
+</ol>
+<h3>Включеные в сборку библиотеки:</h3>
+<ol>
+<li><a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a>  / - плагин для простого добавления анимации на страницы;</li>
+<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> - Полная и облегченная (bootstrap-grid.min.css) версия Bootstrap.
+				<br>В index.html подключена облегченная - только сетка, без JS и компонентов.</li>
+<li><a href="https://jquery.com" target="_blank">jQuery</a> первой ветки;</li>
+<li><a href="http://modernizr.com" target="_blank">Modernizr</a>
+<br>Вместе с html5shiv (HTML5 в IE.)</li>
+<li><a href="https://github.com/inuyaksa/jquery.nicescroll" target="_blank">Nicescroll 3</a>  / - плагин, альтернатива полос прокрутки;</li>
+
 </ol>

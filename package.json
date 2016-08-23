@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
+  "name": "fraemwork",
   "version": "1.0.0",
-  "description": "OptimizedHTML - Start HTML Template",
+  "description": "Fraemwork - Start HTML Template",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "maratdev",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.11.1",

@@ -1,4 +1,4 @@
-<h1>Fraemwork - cтартовый шаблон для frontend разработки</h1>
+<h1>HTML5 Start Fraemwork - cтартовый шаблон для frontend разработки на html5</h1>
 
 <h2>Что входит в сборку:</h2>
 

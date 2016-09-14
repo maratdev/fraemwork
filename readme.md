@@ -58,11 +58,12 @@
 	<li>В файле <strong>app/header.sass</strong> должны размещаться стили, предназначенные для отображения верхней части сайта на первом экране (на самых больших мониторах). Здесь отображаются стили как главной, так и всех внутренних страниц;</li>
 </ol>
 <h3>JavaScript:</h3>
+<p>В common.js находяться данные компоненты:</p>
 <ol>
 	<li>SVG Fallback</li>
 	<li>Плавная прокрутка к объекту</li>
 	<li>E-mail Ajax форма</li>
-	<li>Chrome Smooth Scroll(плавная прокрутка для Chrome);</li>
+	<li>Chrome Smooth Scroll (плавная прокрутка для Chrome);</li>
 	<li>Плавный скролл</li>
 </ol>
 <h3>Включеные в сборку библиотеки:</h3>
@@ -71,8 +72,7 @@
 <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> - Полная и облегченная (bootstrap-grid.min.css) версия Bootstrap.
 				<br>В index.html подключена облегченная - только сетка, без JS и компонентов.</li>
 <li><a href="https://jquery.com" target="_blank">jQuery</a> первой ветки;</li>
-<li><a href="http://modernizr.com" target="_blank">Modernizr</a>
-<br>Вместе с html5shiv (HTML5 в IE.)</li>
+<li><a href="http://modernizr.com" target="_blank">Modernizr</a> - библиотека, сканирует браузер на поддержку тех или иных свойств. Вместе с html5shiv (HTML5 в IE.)</li>
 <li><a href="https://github.com/inuyaksa/jquery.nicescroll" target="_blank">Nicescroll 3</a>  / - плагин, альтернатива полос прокрутки;</li>
 
 </ol>
